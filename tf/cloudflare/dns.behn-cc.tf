@@ -106,6 +106,15 @@ resource "cloudflare_record" "tfer--CNAME_behn-002E-cc_f920b61d9e8a3a46e6664a496
   zone_id = "d82e034792d7e6329760b61a6ae3395b"
 }
 
+resource "cloudflare_record" "CNAME_behn-002E-cc_24ace5cd24c1d15b3354b5f63f6e7d8d" {
+    name = "identity.behn.cc"
+    proxied = "true"
+    ttl = "1"
+    type = "CNAME"
+    value = "8b43f26f-9c92-4bf9-bf7d-09ae2a24ce75.cfargotunnel.com"
+    zone_id = "d82e034792d7e6329760b61a6ae3395b"
+}
+
 resource "cloudflare_record" "tfer--MX_behn-002E-cc_2f72cbdb9e3a07baa6a3f5aa749bcf2a" {
   name     = "behn.cc"
   priority = "1"
@@ -200,4 +209,3 @@ resource "cloudflare_record" "tfer--TXT_behn-002E-cc_e4ce76a2ff47e28f3f2029b785a
   value   = "b684962f53348f42ac32958669bb50"
   zone_id = "d82e034792d7e6329760b61a6ae3395b"
 }
-
