@@ -33,3 +33,12 @@ resource "cloudflare_record" "TXT_behn-0023-dev_google-site-verification" {
   value   = "google-site-verification=a5ia9VZ2q3rRxwVChlN07Aa8ssuXjNutsa737MxlmJc"
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
+
+resource "cloudflare_record" "TXT_behn-0023-dev_keybase-site-verification" {
+  name = "behn.dev"
+  proxied = "false"
+  ttl = "1"
+  type = "TXT"
+  value = "keybase-site-verification=iLIJ7fiVMBmiPOZ0JTb07W6DS8RC26OcCBsJtJrJk5E"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
