@@ -75,7 +75,7 @@ resource "cloudflare_record" "tfer--CNAME_behn-002E-cc_9ff6e9048b782b9dd127df451
   proxied = "true"
   ttl     = "1"
   type    = "CNAME"
-  value   = "behn-cc-website.pages.dev"
+  value   = "portfolio-b8w.pages.dev"
   zone_id = "d82e034792d7e6329760b61a6ae3395b"
 }
 
