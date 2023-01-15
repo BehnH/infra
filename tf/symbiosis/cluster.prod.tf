@@ -7,12 +7,12 @@ provider "kubernetes" {
 }
 
 resource "symbiosis_cluster" "production" {
-    name = "behnh-infra_prod"
+    name = "behnh-infra-prod"
     region = "germany-1"
 }
 
 resource "symbiosis_node_pool" "production" {
-    name = "behnh-infra_prode_nodes"
+    name = "behnh-infra-prod-nodes"
     cluster = symbiosis_cluster.production.name
 
     node_type = "general-2"
