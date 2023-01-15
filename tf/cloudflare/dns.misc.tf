@@ -1,12 +1,3 @@
-resource "cloudflare_record" "tfer--CNAME_big-shit-002E-net_d1e3bab466cdd8f19d8eb70746f3d763" {
-  name    = "www.big-shit.net"
-  proxied = "true"
-  ttl     = "1"
-  type    = "CNAME"
-  value   = "big-shit.net"
-  zone_id = "19cc5968d27c4bd0eef689d611ab8205"
-}
-
 resource "cloudflare_record" "tfer--CNAME_r2-d2-002E-io_010c37ddd2dbe036714059b47f14e1f2" {
   name    = "www.r2-d2.io"
   proxied = "true"

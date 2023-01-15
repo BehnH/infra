@@ -30,14 +30,6 @@ resource "cloudflare_zone" "tfer--bento-bot-002E-com" {
   zone       = "bento-bot.com"
 }
 
-resource "cloudflare_zone" "tfer--big-shit-002E-net" {
-  account_id = "8aa0bba414db7214fef94e8a726826b9"
-  paused     = "false"
-  plan       = "free"
-  type       = "full"
-  zone       = "big-shit.net"
-}
-
 resource "cloudflare_zone" "tfer--forgetfully-002E-dev" {
   account_id = "8aa0bba414db7214fef94e8a726826b9"
   paused     = "false"
