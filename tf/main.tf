@@ -13,6 +13,11 @@ terraform {
         source = "cloudflare/cloudflare"
         version = "~> 3.0"
     }
+
+    symbiosis = {
+      source  = "symbiosis-cloud/symbiosis"
+      version = "0.5.2"
+    }
   }
 }
 
@@ -24,4 +29,14 @@ provider "cloudflare" {
 
 module "cloudflare" {
   source = "./cloudflare/"
+}
+
+variable "symbiosis_api_key" {}
+
+provider "symbiosis" {
+    api_key = var.symbiosis_api_key
+}
+
+module "symbiosis" {
+	source = "./symbiosis/"
 }
