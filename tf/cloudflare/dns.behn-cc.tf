@@ -115,6 +115,15 @@ resource "cloudflare_record" "CNAME_behn-002E-cc_24ace5cd24c1d15b3354b5f63f6e7d8
     zone_id = "d82e034792d7e6329760b61a6ae3395b"
 }
 
+resource "cloudflare_record" "CNAME_behn-002E-cc_workers_spotify" {
+    name = "spotify.function.behn.cc"
+    proxied = "true"
+    ttl = "1"
+    type = "CNAME"
+    value = "spotify-workers.waitrosedev.workers.dev"
+    zone_id = cloudflare_zone.tfer--behn-002E-cc.id
+}
+
 resource "cloudflare_record" "tfer--MX_behn-002E-cc_2f72cbdb9e3a07baa6a3f5aa749bcf2a" {
   name     = "behn.cc"
   priority = "1"
