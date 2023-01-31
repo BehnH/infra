@@ -13,6 +13,11 @@ terraform {
       source  = "cloudflare/cloudflare"
       version = "~> 3.0"
     }
+
+    authentik = {
+      source  = "goauthentik/authentik"
+      version = "2023.1.1"
+    }
   }
 }
 
@@ -26,8 +31,13 @@ module "cloudflare" {
   source = "./cloudflare/"
 }
 
-variable "symbiosis_api_key" {}
+variable "authentik_api_token" {}
 
-provider "symbiosis" {
-  api_key = var.symbiosis_api_key
+provider "authentik" {
+  token = var.authentik_api_token
+  url = "https://identity.behn.cc"
+}
+
+module "authentik" {
+  source = "./authentik"
 }
