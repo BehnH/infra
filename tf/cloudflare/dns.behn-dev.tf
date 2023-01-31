@@ -40,6 +40,7 @@ resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx" {
     proxied = "false"
     ttl = "1"
     type = "MX"
+    value = "aspmx.l.google.com"
     zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
