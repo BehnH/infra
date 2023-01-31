@@ -34,8 +34,17 @@ resource "cloudflare_record" "CNAME_behn-002E-dev_www" {
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
+resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx" {
+    name = "behn.dev"
+    priority = "1"
+    proxied = "false"
+    ttl = "1"
+    type = "MX"
+    zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
 resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-01" {
-  name     = "behn.cc"
+  name     = "behn.dev"
   priority = "5"
   proxied  = "false"
   ttl      = "1"
@@ -45,7 +54,7 @@ resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-01" {
 }
 
 resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-02" {
-  name     = "behn.cc"
+  name     = "behn.dev"
   priority = "5"
   proxied  = "false"
   ttl      = "1"
@@ -55,7 +64,7 @@ resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-02" {
 }
 
 resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-03" {
-  name     = "behn.cc"
+  name     = "behn.dev"
   priority = "10"
   proxied  = "false"
   ttl      = "1"
@@ -65,7 +74,7 @@ resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-03" {
 }
 
 resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-04" {
-  name     = "behn.cc"
+  name     = "behn.dev"
   priority = "10"
   proxied  = "false"
   ttl      = "1"
