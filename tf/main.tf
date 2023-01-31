@@ -10,13 +10,8 @@ terraform {
 
   required_providers {
     cloudflare = {
-        source = "cloudflare/cloudflare"
-        version = "~> 3.0"
-    }
-
-    symbiosis = {
-      source  = "symbiosis-cloud/symbiosis"
-      version = "0.5.2"
+      source  = "cloudflare/cloudflare"
+      version = "~> 3.0"
     }
   }
 }
@@ -24,7 +19,7 @@ terraform {
 variable "cloudflare_api_token" {}
 
 provider "cloudflare" {
-    api_token = var.cloudflare_api_token
+  api_token = var.cloudflare_api_token
 }
 
 module "cloudflare" {
@@ -34,9 +29,5 @@ module "cloudflare" {
 variable "symbiosis_api_key" {}
 
 provider "symbiosis" {
-    api_key = var.symbiosis_api_key
-}
-
-module "symbiosis" {
-	source = "./symbiosis/"
+  api_key = var.symbiosis_api_key
 }
