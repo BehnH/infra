@@ -3,7 +3,7 @@ resource "cloudflare_record" "A_behn-002E-dev_identity" {
   proxied = false
   ttl     = "1"
   type    = "A"
-  value   = "212.71.236.166"
+  value   = "212.71.236.56"
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
@@ -12,7 +12,7 @@ resource "cloudflare_record" "A_behn-002E-dev_languagetool" {
   proxied = false
   ttl     = "1"
   type    = "A"
-  value   = "212.71.236.166"
+  value   = "212.71.236.56"
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
