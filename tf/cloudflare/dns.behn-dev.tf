@@ -43,14 +43,42 @@ resource "cloudflare_record" "CNAME_behn-002E-dev_www" {
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
+resource "cloudflare_record" "CNAME_services-behn-dev_aws-dkim-01" {
+  name    = "5ifrbdbautxpo2qdbwzfni3debqn76of._domainkey.services.behn.dev"
+  proxied = "false"
+  ttl     = "1"
+  type    = "CNAME"
+  value   = "5ifrbdbautxpo2qdbwzfni3debqn76of.dkim.amazonses.com"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
+resource "cloudflare_record" "CNAME_services-behn-dev_aws-dkim-02" {
+  name    = "hbw5cs4ti2vtx44cygnxjoxc4oi2ckld._domainkey.services.behn.dev"
+  proxied = "false"
+  ttl     = "1"
+  type    = "CNAME"
+  value   = "hbw5cs4ti2vtx44cygnxjoxc4oi2ckld.dkim.amazonses.com"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
+resource "cloudflare_record" "CNAME_services-behn-dev_aws-dkim-03" {
+  name    = "oyucqrqdggsaahkqdd4b2mexrplhmssm._domainkey.services.behn.dev"
+  proxied = "false"
+  ttl     = "1"
+  type    = "CNAME"
+  value   = "oyucqrqdggsaahkqdd4b2mexrplhmssm.dkim.amazonses.com"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
+
 resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx" {
-    name = "behn.dev"
-    priority = "1"
-    proxied = "false"
-    ttl = "1"
-    type = "MX"
-    value = "aspmx.l.google.com"
-    zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+  name     = "behn.dev"
+  priority = "1"
+  proxied  = "false"
+  ttl      = "1"
+  type     = "MX"
+  value    = "aspmx.l.google.com"
+  zone_id  = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
 resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-01" {
