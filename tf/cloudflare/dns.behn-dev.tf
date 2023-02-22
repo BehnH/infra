@@ -16,6 +16,15 @@ resource "cloudflare_record" "A_behn-002E-dev_languagetool" {
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
+resource "cloudflare_recorr" "A_behn-0023-dev_coder" {
+  name    = "develop.behn.dev"
+  proxied = false
+  ttl     = "1"
+  type    = "A"
+  value   = "212.71.236.56"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
 resource "cloudflare_record" "tfer--CNAME_behn-002E-dev_7680c18fad65c0fae19eac858af048a6" {
   name    = "_domainconnect.behn.dev"
   proxied = "true"
