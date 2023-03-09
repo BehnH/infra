@@ -107,71 +107,68 @@ resource "cloudflare_record" "tfer--CNAME_behn-002E-cc_f920b61d9e8a3a46e6664a496
 }
 
 resource "cloudflare_record" "CNAME_behn-002E-cc_24ace5cd24c1d15b3354b5f63f6e7d8d" {
-    name = "identity.behn.cc"
-    proxied = "true"
-    ttl = "1"
-    type = "CNAME"
-    value = "8b43f26f-9c92-4bf9-bf7d-09ae2a24ce75.cfargotunnel.com"
-    zone_id = "d82e034792d7e6329760b61a6ae3395b"
+  name    = "identity.behn.cc"
+  proxied = "true"
+  ttl     = "1"
+  type    = "CNAME"
+  value   = "8b43f26f-9c92-4bf9-bf7d-09ae2a24ce75.cfargotunnel.com"
+  zone_id = "d82e034792d7e6329760b61a6ae3395b"
 }
 
 resource "cloudflare_record" "CNAME_behn-002E-cc_workers_spotify" {
-    name = "spotify.function.behn.cc"
-    proxied = "true"
-    ttl = "1"
-    type = "CNAME"
-    value = "spotify-workers.waitrosedev.workers.dev"
-    zone_id = cloudflare_zone.tfer--behn-002E-cc.id
+  name    = "spotify.function.behn.cc"
+  proxied = "true"
+  ttl     = "1"
+  type    = "CNAME"
+  value   = "spotify-workers.waitrosedev.workers.dev"
+  zone_id = cloudflare_zone.tfer--behn-002E-cc.id
 }
 
-resource "cloudflare_record" "tfer--MX_behn-002E-cc_2f72cbdb9e3a07baa6a3f5aa749bcf2a" {
-  name     = "behn.cc"
-  priority = "1"
-  proxied  = "false"
-  ttl      = "1"
-  type     = "MX"
-  value    = "aspmx.l.google.com"
-  zone_id  = "d82e034792d7e6329760b61a6ae3395b"
+resource "cloudflare_record" "CNAME_behn-002E-cc_icloud-dkim" {
+  name    = "sig1._domainkey.behn.cc"
+  proxied = "false"
+  ttl     = "1"
+  type    = "CNAME"
+  value   = "sig1.dkim.behn.cc.at.icloudmailadmin.com"
+  zone_id = cloudflare_zone.tfer--behn-002E-cc.id
 }
 
-resource "cloudflare_record" "tfer--MX_behn-002E-cc_397beac56337559ea879490ed55c337c" {
-  name     = "behn.cc"
-  priority = "5"
-  proxied  = "false"
-  ttl      = "1"
-  type     = "MX"
-  value    = "alt1.aspmx.l.google.com"
-  zone_id  = "d82e034792d7e6329760b61a6ae3395b"
-}
-
-resource "cloudflare_record" "tfer--MX_behn-002E-cc_b275f2300a59215f93b3d80017419b8e" {
+resource "cloudflare_record" "MX_behn-002E-cc_icloud-mx-01" {
   name     = "behn.cc"
   priority = "10"
   proxied  = "false"
   ttl      = "1"
   type     = "MX"
-  value    = "alt3.aspmx.l.google.com"
-  zone_id  = "d82e034792d7e6329760b61a6ae3395b"
+  value    = "mx01.mail.icloud.com"
+  zone_id  = cloudflare_zone.tfer--behn-002E-cc.id
 }
 
-resource "cloudflare_record" "tfer--MX_behn-002E-cc_bd1adc9d1169017a1e0b3b48adfcafc6" {
+resource "cloudflare_record" "MX_behn-002E-dev_icloud-mx-02" {
   name     = "behn.cc"
   priority = "10"
   proxied  = "false"
   ttl      = "1"
   type     = "MX"
-  value    = "alt4.aspmx.l.google.com"
-  zone_id  = "d82e034792d7e6329760b61a6ae3395b"
+  value    = "mx02.mail.icloud.com"
+  zone_id  = cloudflare_zone.tfer--behn-002E-cc.id
 }
 
-resource "cloudflare_record" "tfer--MX_behn-002E-cc_ceccbd811864a3da80f914ad327d45e0" {
-  name     = "behn.cc"
-  priority = "5"
-  proxied  = "false"
-  ttl      = "1"
-  type     = "MX"
-  value    = "alt2.aspmx.l.google.com"
-  zone_id  = "d82e034792d7e6329760b61a6ae3395b"
+resource "cloudflare_record" "TXT_behn-002e-cc_apple-domain-verification" {
+  name    = "behn.cc"
+  proxied = "false"
+  ttl     = "1"
+  type    = "TXT"
+  value   = "apple-domain=UyyADRRUbUVgpZTi"
+  zone_id = cloudflare_zone.tfer--behn-002E-cc.id
+}
+
+resource "cloudflare_record" "TXT_behn-002E-cc_icloud-spf-record" {
+  name    = "behn.cc"
+  proxied = "false"
+  ttl     = "1"
+  type    = "TXT"
+  value   = "v=spf1 include:icloud.com ~all"
+  zone_id = cloudflare_zone.tfer--behn-002E-cc.id
 }
 
 resource "cloudflare_record" "tfer--TXT_behn-002E-cc_51a9d18e3dc282472d58d9d5dcc3657a" {
