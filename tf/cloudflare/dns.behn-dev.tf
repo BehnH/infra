@@ -26,20 +26,29 @@ resource "cloudflare_record" "A_behn-0023-dev_coder" {
 }
 
 resource "cloudflare_record" "A_behn-dev_hashicorp_vault" {
-  name = "vault.behn.dev"
+  name    = "vault.behn.dev"
   proxied = false
-  ttl = "1"
-  type = "A"
-  value = "212.71.236.56"
+  ttl     = "1"
+  type    = "A"
+  value   = "212.71.236.56"
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
 resource "cloudflare_record" "A_behn-dev_headscale" {
-  name = "headscale.behn.dev"
+  name    = "headscale.behn.dev"
   proxied = false
-  ttl = "1"
-  type = "A"
-  value = "212.71.236.56"
+  ttl     = "1"
+  type    = "A"
+  value   = "212.71.236.56"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
+resource "cloudflare_record" "A_behn-dev_kiali" {
+  name    = "kiali.behn.dev"
+  proxied = false
+  ttl     = "1"
+  type    = "A"
+  value   = "212.71.236.56"
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
