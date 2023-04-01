@@ -16,8 +16,8 @@ resource "cloudflare_record" "A_behn-002E-dev_languagetool" {
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
-resource "cloudflare_record" "A_behn-0023-dev_coder" {
-  name    = "develop.behn.dev"
+resource "cloudflare_record" "A_behn-0023-dev_grafana" {
+  name    = "grafana.behn.dev"
   proxied = false
   ttl     = "1"
   type    = "A"
