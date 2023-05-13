@@ -70,8 +70,8 @@ resource "cloudflare_record" "A_behn-dev_spotify-dash" {
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
-resource "cloudflare_record" "A_behn-dev_analytics" {
-  name    = "analytics.svc.behn.dev"
+resource "cloudflare_record" "A_behn-dev_argocd" {
+  name    = "argo.svc.behn.dev"
   proxied = false
   ttl     = "1"
   type    = "A"
