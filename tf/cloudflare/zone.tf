@@ -53,3 +53,11 @@ resource "cloudflare_zone" "tfer--trapped-in-002E-space" {
   type       = "full"
   zone       = "trapped-in.space"
 }
+
+resource "cloudflare_zone" "f1_boats" {
+  account_id = "8aa0bba414db7214fef94e8a726826b9"
+  paused     = "false"
+  plan       = "free"
+  type       = "full"
+  zone       = "f1.boats"
+}
