@@ -79,6 +79,15 @@ resource "cloudflare_record" "A_behn-dev_argocd" {
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
+resource "cloudflare_record" "A_behn-dev_crt" {
+  name    = "crt.behn.dev"
+  proxied = false
+  ttl     = "1"
+  type    = "A"
+  value   = "212.71.236.56"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
 resource "cloudflare_record" "tfer--CNAME_behn-002E-dev_7680c18fad65c0fae19eac858af048a6" {
   name    = "_domainconnect.behn.dev"
   proxied = "true"
@@ -131,57 +140,6 @@ resource "cloudflare_record" "CNAME_services-behn-dev_aws-dkim-03" {
   type    = "CNAME"
   value   = "oyucqrqdggsaahkqdd4b2mexrplhmssm.dkim.amazonses.com"
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
-}
-
-
-resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx" {
-  name     = "behn.dev"
-  priority = "1"
-  proxied  = "false"
-  ttl      = "1"
-  type     = "MX"
-  value    = "aspmx.l.google.com"
-  zone_id  = cloudflare_zone.tfer--behn-002E-dev.id
-}
-
-resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-01" {
-  name     = "behn.dev"
-  priority = "5"
-  proxied  = "false"
-  ttl      = "1"
-  type     = "MX"
-  value    = "alt1.aspmx.l.google.com"
-  zone_id  = cloudflare_zone.tfer--behn-002E-dev.id
-}
-
-resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-02" {
-  name     = "behn.dev"
-  priority = "5"
-  proxied  = "false"
-  ttl      = "1"
-  type     = "MX"
-  value    = "alt2.aspmx.l.google.com"
-  zone_id  = cloudflare_zone.tfer--behn-002E-dev.id
-}
-
-resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-03" {
-  name     = "behn.dev"
-  priority = "10"
-  proxied  = "false"
-  ttl      = "1"
-  type     = "MX"
-  value    = "alt3.aspmx.l.google.com"
-  zone_id  = cloudflare_zone.tfer--behn-002E-dev.id
-}
-
-resource "cloudflare_record" "MX_behn-002E-dev_google-workspace-mx-04" {
-  name     = "behn.dev"
-  priority = "10"
-  proxied  = "false"
-  ttl      = "1"
-  type     = "MX"
-  value    = "alt4.aspmx.l.google.com"
-  zone_id  = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
 resource "cloudflare_record" "TXT_behn-0023-dev_google-site-verification" {
