@@ -88,12 +88,21 @@ resource "cloudflare_record" "A_behn-dev_crt" {
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
+resource "cloudflare_record" "A_k8s-svc-behn-dev_hetzner" {
+  name = "hetzner.k8s.svc.behn.dev"
+  proxied = false
+  ttl = "1"
+  type = "A"
+  value = "142.132.244.5"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
 resource "cloudflare_record" "A_svc-behn-dev_vault" {
   name    = "vault.svc.behn.dev"
   proxied = false
   ttl     = "1"
   type    = "A"
-  value   = "142.132.240.34"
+  value   = "142.132.244.5"
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
