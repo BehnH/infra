@@ -70,15 +70,6 @@ resource "cloudflare_record" "A_behn-dev_spotify-dash" {
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
-resource "cloudflare_record" "A_behn-dev_argocd" {
-  name    = "argo.svc.behn.dev"
-  proxied = false
-  ttl     = "1"
-  type    = "A"
-  value   = "212.71.236.56"
-  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
-}
-
 resource "cloudflare_record" "A_behn-dev_crt" {
   name    = "crt.behn.dev"
   proxied = false
@@ -102,6 +93,15 @@ resource "cloudflare_record" "A_svc-behn-dev_vault" {
   proxied = false
   ttl     = "1"
   type    = "A"
+  value   = "142.132.244.5"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
+resource "cloudflare_record" "A_hetzner-k8s-svc-behn-dev_authentik" {
+  name = "id.hetzner.k8s.behn.dev"
+  proxied = false
+  ttl = "1"
+  type = "A"
   value   = "142.132.244.5"
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
