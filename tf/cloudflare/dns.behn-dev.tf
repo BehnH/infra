@@ -43,15 +43,6 @@ resource "cloudflare_record" "A_behn-dev_headscale" {
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
-resource "cloudflare_record" "A_behn-dev_kiali" {
-  name    = "kiali.behn.dev"
-  proxied = false
-  ttl     = "1"
-  type    = "A"
-  value   = "212.71.236.56"
-  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
-}
-
 resource "cloudflare_record" "A_behn-dev_n8n" {
   name    = "flow.svc.behn.dev"
   proxied = false
@@ -117,6 +108,15 @@ resource "cloudflare_record" "A_hetzner-k8s-svc-behn-dev_s3" {
 
 resource "cloudflare_record" "A_hetzner-k8s-svc-behn-dev_s3-console" {
   name = "s3-console.hetzner.k8s.behn.dev"
+  proxied = false
+  ttl = "1"
+  type = "A"
+  value   = "142.132.244.5"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
+resource "cloudflare_record" "A_hetzner-k8s-svc-behn-dev_kiali" {
+  name = "kiali.hetzner.k8s.behn.dev"
   proxied = false
   ttl = "1"
   type = "A"
