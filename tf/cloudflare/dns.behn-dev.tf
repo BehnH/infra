@@ -1,12 +1,3 @@
-resource "cloudflare_record" "A_behn-002E-dev_identity" {
-  name    = "id.behn.dev"
-  proxied = false
-  ttl     = "1"
-  type    = "A"
-  value   = "212.71.236.56"
-  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
-}
-
 resource "cloudflare_record" "A_behn-002E-dev_languagetool" {
   name    = "languagetool.behn.dev"
   proxied = false
@@ -27,15 +18,6 @@ resource "cloudflare_record" "A_behn-0023-dev_grafana" {
 
 resource "cloudflare_record" "A_behn-dev_hashicorp_vault" {
   name    = "vault.behn.dev"
-  proxied = false
-  ttl     = "1"
-  type    = "A"
-  value   = "212.71.236.56"
-  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
-}
-
-resource "cloudflare_record" "A_behn-dev_headscale" {
-  name    = "headscale.behn.dev"
   proxied = false
   ttl     = "1"
   type    = "A"
@@ -76,6 +58,15 @@ resource "cloudflare_record" "A_k8s-svc-behn-dev_hetzner" {
   ttl = "1"
   type = "A"
   value = "142.132.244.5"
+  zone_id = cloudflare_zone.tfer--behn-002E-dev.id
+}
+
+resource "cloudflare_record" "A_infra-behn-dev_idp" {
+  name    = "id.behn.dev"
+  proxied = false
+  ttl     = "1"
+  type    = "A"
+  value   = "142.132.244.5"
   zone_id = cloudflare_zone.tfer--behn-002E-dev.id
 }
 
